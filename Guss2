@@ -1,0 +1,15 @@
+import streamlit as st
+import random
+def guess_the_number():
+   st.title("Guess the Number")
+   random_number = random.randint(1, 100)
+   guess = st.number_input("Guess a    number between 1 and 100")
+if st.button("Submit"):
+    if (guess == random_number):
+      st.success("Congratulations! You guessed it right.")
+    elif (guess < random_number):
+      st.error("Too low. Try again.")
+    else:
+      st.error("Too high. Try again.")
+if __name__ == "__main__":
+  guess_the_number()
